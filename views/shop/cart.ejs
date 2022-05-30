@@ -1,0 +1,79 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/cart.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <main>
+            <% if (products.length > 0) { %>
+                <div class="card">
+                    <div class="row">
+                        <div class="col-md-8 cart">
+                            <div class="title">
+                                <div class="row">
+                                    <div class="col">
+                                        <h4><b>Shopping Cart</b></h4>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                    <% products.forEach(p => { %>
+                            <!----->
+                                        <div class="row border-top border-bottom">
+                                            <div class="row main align-items-center">
+                                                <div class="col-2"><img class="img-fluid" src="<%= p.imageUrl %>" alt="<%= p.title %>"></div>
+                                                <div class="col">
+                                                    <div class="row text-muted"><%= p.title %></div>
+                                    
+                                                </div>
+                                                <div class="col">
+                                                    <a href="#">-</a><a href="#" class="border"><%= p.cartItem.quantity %></a><a href="#">+</a>
+                                                </div>
+                                                <div class="col"> <span class="close">&#10005;</span></div>
+                                            </div>
+                                        </div>
+
+                            <!---->
+                            <form action="/cart-delete-item" method="POST">
+                                <input type="hidden" value="<%= p.id %>" name="productId">
+                                <button class="cartdeletebutton" type="submit"><i class="fa-solid fa-trash-can"></i></button>
+                            </form>
+                        
+                    <% }) %>
+                    <div class="back-to-shop"><a href="/products">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+                    </div>
+                    <div class="col-md-4 summary">
+                        <div>
+                            <h5><b>Summary</b></h5>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            
+                            <div class="col text-right">₹ 132.00</div>
+                        </div>
+                        <form>
+                            <p>SHIPPING</p>
+                            <select>
+                                <option class="text-muted">Standard-Delivery- ₹.500</option>
+                            </select>
+                            <p>COUPON CODE</p>
+                            <input id="code" placeholder="Enter your code">
+                        </form>
+                        <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                            <div class="col">TOTAL PRICE</div>
+                            <div class="col text-right">₹ 13700</div>
+                        </div>
+                        <form action="/create-order" method="POST">
+                            <button type="submit" class="btn">Order Now!</button>
+                        </form>
+                    </div>
+                    </div>
+                    
+                    </div>
+                
+            <% } else { %>
+                <h1>No Products in Cart!</h1>
+            <% } %>
+        </main>
+        
+    </body></html>

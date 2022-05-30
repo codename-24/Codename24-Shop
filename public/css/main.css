@@ -1,0 +1,522 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,600;1,100;1,300;1,500&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Urbanist';
+}
+
+main {
+    padding: 1rem;
+    margin: auto;
+}
+
+form {
+    display: inline;
+}
+
+.shopheading{
+    margin-left:500px;
+    text-align: center;
+    font-size:30px;
+}
+
+.headingelements{
+    margin-left:300px;
+}
+
+.centered {
+    text-align: center;
+}
+
+.image {
+    height: 20rem;
+}
+
+.image img {
+    height: 100%;
+}
+
+.main-header {
+    width: 100%;
+    height: 3.5rem;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.main-header__nav {
+    height: 100%;
+    display: none;
+    align-items: center;
+}
+
+.main-header__item-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-header__item {
+    margin: 0 1rem;
+    padding: 0;
+    color: #333;
+}
+
+.main-header__item a {
+    text-decoration: none;
+    color: #333;
+}
+
+.main-header__item a:hover,
+.main-header__item a:active,
+.main-header__item a.active {
+    color: darkgoldenrod;
+}
+
+.mobile-nav {
+    width: 30rem;
+    height: 100vh;
+    max-width: 90%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: white;
+    z-index: 10;
+    padding: 2rem 1rem 1rem 2rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+}
+
+.mobile-nav.open {
+    transform: translateX(0);
+}
+
+.mobile-nav__item-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-nav__item {
+    margin: 1rem;
+    padding: 0;
+}
+
+.mobile-nav__item a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.5rem;
+    padding: 0.5rem 2rem;
+}
+
+.mobile-nav__item a:active,
+.mobile-nav__item a:hover,
+.mobile-nav__item a.active {
+    background: darkgoldenrod;
+    color: white;
+    border-radius: 3px;
+}
+
+#side-menu-toggle {
+    border: none;
+    font: inherit;
+    padding: 0.5rem;
+    display: block;
+    background: transparent;
+    color: black;
+    cursor: pointer;
+}
+
+#side-menu-toggle:focus {
+    outline: none;
+}
+
+#side-menu-toggle:active,
+#side-menu-toggle:hover {
+    color: darkgoldenrod;
+    border-color: darkgoldenrod;
+}
+
+
+/**/
+
+
+
+
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    display: none;
+}
+/*product detail*/
+
+ .productcontainer {
+     flex: 1;
+     margin: 5px;
+     min-width: 280px;
+     height: 350px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: #f5fbfd;
+     position: relative;
+ }
+
+ .productcontainer:hover {
+     backdrop-filter: blur(10px);
+        filter: blur(4px);
+        
+ }
+
+ .productcircle {
+     width: 200px;
+     height: 200px;
+     border-radius: 50%;
+     background-color: white;
+     position: absolute;
+
+ }
+
+ .productimage {
+     height: 75%;
+     z-index: 2;
+
+ }
+
+ .productinfo {
+     z-index: 3;
+ }
+
+ .producticon {
+     text-decoration: none;
+     z-index:3;
+     font-size: 20px;
+     color:#333;
+     margin-left:-60px;
+     margin-top:280px;
+    
+    
+ }
+ .producticon:hover {
+    visibility: visible;
+           
+ }
+ 
+
+/**/
+.grid {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+.product-item{
+    min-width:250px;
+    display: inline-block;
+}
+.card__header{
+    font-family: 'Urbanist';
+
+}
+.card__header h1{
+    margin-bottom:10px;
+    font-size: 24px;
+}
+.card__content {
+    padding: 1rem;
+}
+
+
+.card__content h1,
+.card__content h2,
+.card__content p {
+    margin: 0;
+}
+
+.card__image {
+    width: 100%;
+}
+
+.card__image img {
+    width: 100%;
+}
+
+.card__actions {
+    padding: 1rem;
+    text-align: center;
+}
+
+.card__actions button,
+.card__actions a {
+    margin: 0 0.25rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.25rem 1rem;
+    text-decoration: none;
+    font: inherit;
+    border: 1px solid #00695c;
+    color: #00695c;
+    background: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #00695c;
+    color: white;
+}
+
+.btn.danger {
+    color: red;
+    border-color: red;
+}
+
+.btn.danger:hover,
+.btn.danger:active {
+    background: red;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .main-header__nav {
+        display: flex;
+    }
+
+    #side-menu-toggle {
+        display: none;
+    }
+}
+
+
+/*newsletter*/
+
+
+.ncontainer{
+    
+    height: 60vh;
+        background-color: #fcf5f5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+}
+
+.title{
+    font-size: 50px;
+}
+
+.desc{
+    font-size: 24px;
+        font-weight: 300;
+        margin-bottom: 20px;
+}
+
+.inputcontainer{
+    width: 50%;
+        height: 40px;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid lightgray;
+}
+
+.input{
+    border: none;
+        flex: 8;
+        padding-left: 20px;
+}
+
+.buttonnewsletter{
+    flex: 1;
+        border: none;
+        background-color: teal;
+        color: white;
+}
+
+
+/*footer*/
+
+.footercontainer{
+    display: flex;
+}
+.footerleft{
+    flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+
+}
+.footerlogo >img{
+    height: 180px;
+        width: 180px;
+        border-radius: 20px;
+}
+.footerdesc{
+    margin: 20px 0px;
+}
+.footersocialcontainer{
+    display: flex;
+}
+.footersocialicon{
+    width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        color: white;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+}
+.footercenter{
+    flex: 1;
+        padding: 20px;
+}
+.footercentertitle{
+    margin-bottom: 30px;
+}
+.footercenterlist{
+    margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+}
+.footercenterlistitem{
+    width: 50%;
+        margin-bottom: 10px;
+}
+.footerright{
+flex: 1;
+    padding: 20px;
+}
+.footerrightcontactitem{
+    margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+}
+.footerrightpayment{
+    width: 50%;
+}
+.footerrighttitle{
+    margin-bottom:30px;
+}
+
+
+/*headerr */
+
+.headercontainer{
+    height: 60px;
+}
+.headerwrapper{
+    padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+}
+.headerleft{
+    flex: 1;
+        display: flex;
+        align-items: center;
+}
+.headerlanguage{
+    font-size: 14px;
+        cursor: pointer;
+}
+.headersearchcontainer{
+    border: 0.5px solid lightgray;
+        display: flex;
+        align-items: center;
+        margin-left: 25px;
+}
+.headersearchcontainerinput{
+    border: none;
+        height: 25px;
+        width: 200px;
+}
+.headercenter{
+    flex: 1;
+        text-align: center;
+        text-decoration: none;
+}
+.headercenterlogo{
+    font-weight: bolder;
+        font-size: 26px;
+        cursor: pointer;
+        text-decoration: none;
+}
+.headerright{
+    flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+}
+.headerrightmenuitem{
+    font-size: 16px;
+        cursor: pointer;
+        margin-left: 25px;
+}
+
+
+/*slide*/
+
+.carousel-caption{
+    flex: 1;
+    padding: 50px;
+    position: absolute;
+    top:50px;
+    margin-left:450px;
+    
+}
+.infocontainertitle{
+font-size: 65px;
+color: black;
+font-family: 'Urbanist';
+}
+.infocontainerdesc{
+margin: 30px 0px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: black;
+    font-family: 'Urbanist';
+}
+.infocontainerbutton{
+padding: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    color: black;
+    font-family: 'Urbanist';
+}
+.imagecontainer{
+    height:500px;
+    position: relative;
+    background-color: #fbf0f4;
+}
+.imagecontainer > img{
+    height:90%;
+
+}
